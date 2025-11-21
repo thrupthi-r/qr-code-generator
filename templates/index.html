@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator - Dark Theme</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 QR Code Generator</h1>
+            <p class="subtitle">Generate custom QR codes instantly</p>
+        </header>
+
+        <div class="card">
+            <div class="input-section">
+                <label for="text-input">Enter Text or URL</label>
+                <textarea id="text-input" placeholder="Enter text, URL, or any data..." rows="4"></textarea>
+                
+                <div class="customization">
+                    <h3>Customize Your QR Code</h3>
+                    
+                    <div class="option-group">
+                        <label for="fill-color">Foreground Color:</label>
+                        <input type="color" id="fill-color" value="#ffffff">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="back-color">Background Color:</label>
+                        <input type="color" id="back-color" value="#000000">
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="box-size">Size:</label>
+                        <input type="range" id="box-size" min="5" max="15" value="10">
+                        <span id="size-value">10</span>
+                    </div>
+                    
+                    <div class="option-group">
+                        <label for="border">Border:</label>
+                        <input type="range" id="border" min="1" max="5" value="2">
+                        <span id="border-value">2</span>
+                    </div>
+                </div>
+            <div class="button-group">
+                <button id="generate-btn" class="btn-generate">Generate QR Code</button>
+                <button id="reset-btn" class="btn-reset">Reset</button>
+            </div>
+
+            </div>
+
+            <div class="output-section">
+                <div id="qr-result" class="qr-placeholder">
+                    <p>Your QR code will appear here</p>
+                </div>
+                <button id="download-btn" class="btn-download" style="display: none;">Download QR Code</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with Python Flask & ❤️</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
